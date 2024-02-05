@@ -10,7 +10,7 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   name      String
   email     String   @unique
   plants    Plant[]
@@ -19,10 +19,10 @@ model User {
 }
 
 model Plant {
-  id          Int      @id @default(autoincrement())
+  id          String   @id @default(uuid())
   name        String
   description String
-  userId      Int
+  userId      String
   user        User     @relation(fields: [userId], references: [id])
   logs        Log[]
   createdAt   DateTime @default(now())
@@ -30,8 +30,8 @@ model Plant {
 }
 
 model Log {
-  id          Int      @id @default(autoincrement())
-  plantId     Int
+  id          String   @id @default(uuid())
+  plantId     String
   plant       Plant    @relation(fields: [plantId], references: [id])
   status      String
   description String

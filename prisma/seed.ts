@@ -61,6 +61,134 @@ async function main() {
     },
   })
 
+  await prisma.user.create({
+    data: {
+      name: 'John Smith',
+      email: 'john.smith@example.com',
+      plants: {
+        create: [
+          {
+            name: 'Bamboo',
+            description: 'Fast growing plant.',
+            logs: {
+              create: [
+                {
+                  status: 'Healthy',
+                  description: 'Thriving and green.',
+                },
+              ],
+            },
+          },
+          {
+            name: 'Rose',
+            description: 'Symbol of love and passion, needs regular watering.',
+            logs: {
+              create: [
+                {
+                  status: 'Healthy',
+                  description: 'Blooming with vibrant colors.',
+                },
+              ],
+            },
+          },
+          {
+            name: 'Sunflower',
+            description: 'Tall plant that requires full sun.',
+            logs: {
+              create: [
+                {
+                  status: 'Healthy',
+                  description: 'Standing tall towards the sun.',
+                },
+              ],
+            },
+          },
+          {
+            name: 'Lavender',
+            description: 'Fragrant and beneficial for pollinators.',
+            logs: {
+              create: [
+                {
+                  status: 'Healthy',
+                  description: 'Aromatic and attracting bees.',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  })
+
+  await prisma.user.create({
+    data: {
+      name: 'Alice Johnson',
+      email: 'alice.johnson@example.com',
+      plants: {
+        create: [
+          {
+            name: 'Orchid',
+            description: 'Elegant and delicate flowers.',
+            logs: {
+              create: [
+                {
+                  status: 'Healthy',
+                  description: 'Blooming beautifully.',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  })
+
+  await prisma.user.create({
+    data: {
+      name: 'Michael Brown',
+      email: 'michael.brown@example.com',
+      plants: {
+        create: [
+          {
+            name: 'Fern',
+            description: 'Loves shade and moisture.',
+            logs: {
+              create: [
+                {
+                  status: 'Healthy',
+                  description: 'Lush and verdant.',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  })
+
+  await prisma.user.create({
+    data: {
+      name: 'Emma Wilson',
+      email: 'emma.wilson@example.com',
+      plants: {
+        create: [
+          {
+            name: 'Succulent',
+            description: 'Perfect for dry environments.',
+            logs: {
+              create: [
+                {
+                  status: 'Healthy',
+                  description: 'Plump and colorful.',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  })
+
   console.log('Seed data have been inserted.')
 }
 
